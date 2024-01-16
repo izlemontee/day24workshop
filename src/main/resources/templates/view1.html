@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Add Order</h1>
+    <form method="POST" th:action="@{/process}" th:object="${order}">
+        <input type="date" th:name="order_date" th:value="*{order_date}" placeholder="Order Date">
+        <input type="text" th:name="customer_name" th:value="*{customer_name}" placeholder="Customer Name">
+        <input type="text" th:name="shipping_address" th:value="*{shipping_address}" placeholder="Shipping Address">
+        <input type="text" th:name="notes" th:value="*{notes}" placeholder="Notes">
+        <button type="submit">Submit</button>
+
+    </form>
+</body>
+</html>

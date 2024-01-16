@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Enter Product</h1>
+    <form method="POST" th:object="${orderdetail}">
+        <input type="text" th:name="product" th:value="*{product}" placeholder="Product">
+        <input type="text" th:name="unit_price" th:value="*{unit_price}" placeholder="Unit Price">
+        <input type="text" th:name="discount" th:value="*{discount}" placeholder = "Discount">
+        <input type="number" th:name="quantity" th:value="*{quantity}" placeholder="Quantity">
+
+        <button type="submit" method="POST" th:formaction="@{/order}">Add</button>
+        <button type="submit" method="POST" th:formaction="@{/checkout}">Check out</button>
+    </form>
+</body>
+</html>
